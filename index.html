@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Insta-Sohor</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+
+        <!-- google Montserrat  font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+                <a class="navbar-brand" href="#">Insta-Sohor</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-link active" role="button" onclick="switchTab( 'posts' )">
+                            <i class="fa-solid fa-house"></i>
+                        </li>
+                        <!-- 'liked' -->
+                        <li class="nav-link active" role="button" onclick="switchTab('liked')"> 
+                            <i class="fa-solid fa-heart text-danger"></i>
+                        </li>
+
+                        <li class="nav-link active" role="button" onclick="switchTab( 'reported' )">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main container mx-auto p-3">
+            <div id="posts">
+            </div>
+            <div id="liked">
+                <h1>Liked posts</h1>
+            </div>
+
+            <div id="reported">
+                <h1>Reported posts</h1>
+            </div>
+        </main>
+
+
+    <!-- bonus part -->
+        <section class="py-5 container">
+            <h5>
+             প্রশ্ন ১/   লোকাল স্টোরেজ এবং সেশন স্টোরেজের পার্থক্য কী?
+            </h5>
+            <p>
+               <span class="fw-bold" > লোকাল স্টোরেজ এবং সেশন স্টোরেজের পার্থক্যঃ</span> লোকাল স্টোরেজ এবং সেশন স্টোরেজের কাজ হচ্ছে ইউজারের ডাটা ব্রাউজারে স্টোর করে রাখা।যাতে ইউজার যেকোনো সময় ব্রাউজারে আসলে আগের ডাটা গুলো খুঁজে পায়।লোকাল স্টোরেজে ডাটা গুলো স্তায়ীভাবে সংরক্ষন থাকে আমরা ডাটা ডিলিট করার আগ পর্যন্ত।অন্য দিকে সেশন স্টোরেজে ডাটা গুলো অস্থায়ীভাবে সংরক্ষণ থাকে।আমরা ব্রাউজার থেকে বেরিয়ে গেলে বা বা লোড বা রিফ্রেশ করলে ডাটা ডিলেট বা অটো ভাবে রিমুভ হয়ে যায়।
+               <br>
+               <span class="fw-bold"> লোকাল স্টোরেজ এবং সেশন স্টোরেজে ৪টি পদ্ধতির মাধ্যমে  ইউজারের সাথে ডাটা আদানপ্রদান করে।</span>
+                <br>
+            ১/নতুন ডাটা সেট করাঃsetItem()দ্বারা ইউজার স্টোরেজে নতুন ডাটা সেট করে।
+            <br>
+            ২/স্টোরেজ থেকে ইউজার ডাটা নেওয়াঃস্টোরেজ থেকে ইউজার ডাটা নেওয়ার জন্য getItem()ব্যাবহার করে।
+            <br>
+            ৩/ডাটা রিমুভ করাঃইউজার স্টোরেজ থেকে নির্দিষ্ট ডাটা রিমুভ করার জন্য removeItem() ব্যবহার করে।
+            <br>
+            ৮/স্টরেজ ক্লিয়ার করা:স্টোরেজ ক্লিয়ার করার জন্য. Clear() মেথড ব্যাবহার করে।
+            </p>
+            
+            <h5 >
+                প্রশ্ন ২/ইভেন্ট লুপ এর কাজ কী?
+            </h5>
+            <p>
+                <span class="fw-bold">ইভেন্ট লুপ এর কাজঃ</span>
+                আমরা জানি জাভাস্ক্রিপ্ট v8 ইঞ্জিন দ্বারা কাজ করে।আমরা জাভাস্ক্রিপ্ট এ যে কোড গুলো লিখি v8 ইঞ্জিন সেগুলোকে মেশিন ল্যাংগুয়েজে রুপান্তরিত করে।ইঞ্জিনের ভেতরে প্রধানত  দুটো জিনিস থাকে।হিপ এবং কলস্টেক।হিপের কাজ হচ্ছে মেমরি ম্যানেজমেন্ট করা। <br>
+                কল স্টেক এর কাজ আমরা যখন জাভাস্ক্রিপ্ট এ ফাংশনগুলোকে কল করি তখন ফাংশন গুলো কল স্টেকে স্টেক আকারে জমা হয়।
+                কলস্টেক থেক কল হবার পর তা ব্রাউজার প্রিন্ট করে দেখায়।
+                কিন্তু যখন কোনো একটা এসিনক্রোনাস ফাংশন কলস্টেকে এসে জমা হয় তখন কল স্টেক এসিংক্রোনাস ফাংশনটিকে কল না দিয়ে তার স্টেক থেকে বের করে web api তে দিয়ে দেয়।
+                web api তে টাইমার কাউন্ট শেষ হবার পর web api ফাংশনটিকে call back queue তে স্তানান্তর করে।call back queue তখন ইভেন্ট লুপ এর মাধ্যামে  পর্যায়ক্রমিকভাবে প্রস্তুত ফাংশনগুলোকে কল স্টেকে পাঠাতে থাকে।কল স্টেক থেকে তখন ফাংশন গুলোকে কল করে দিলে তা প্রিন্ট হয়।
+                ইভেন্ট লুপের মাধ্যমে call back queue থেকে ফাংশনগুলো call stack এ স্থানান্তর হয়।
+ 
+                
+            </p>
+
+
+        </section>
+        <footer></footer>
+
+        <!-- add javascript  file  -->
+        <script src="./js/app.js"></script>
+    </body>
+</html>
